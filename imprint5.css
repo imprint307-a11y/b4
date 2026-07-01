@@ -1,0 +1,462 @@
+/* الألوان والخطوط العامة القابلة للتعديل بسهولة */
+:root {
+    --bg-dark: #0f172a;        /* خلفية داكنة جداً مستوحاة من ثيمات المبرمجين */
+    --bg-card: rgba(30, 41, 59, 0.7); /* لون البطاقات مع تأثير شفاف */
+    --accent-color: #38bdf8;   /* اللون الرئيسي - الأزرق السماوي التقني */
+    --text-main: #f8fafc;      /* النص الأساسي أبيض مائل للمطفي */
+    --text-muted: #94a3b8;     /* النص الثانوي الرمادي */
+    --border-color: rgba(255, 255, 255, 0.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth; /* تصفح سلس جداً */
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: 'Tajawal', 'Inter', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* الترويسة الشفافة (Glassmorphism Navbar) */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(12px); /* تأثير الضبابية الزجاجي المودرن */
+    border-bottom: 1px solid var(--border-color);
+    padding: 1.2rem 0;
+    transition: all 0.3s ease;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    color: var(--accent-color);
+    text-decoration: none;
+    font-size: 1.4rem;
+}
+
+.nav-links a {
+    color: var(--text-main);
+    text-decoration: none;
+    margin-right: 2rem;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+/* عناوين الأقسام */
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 3.5rem;
+    position: relative;
+    font-weight: 700;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: var(--accent-color);
+    border-radius: 2px;
+}
+
+/* القسم الرئيسي (Hero Section) */
+.hero-section {
+    padding: 10rem 0 6rem 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4rem;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.badge {
+    background: rgba(56, 189, 248, 0.1);
+    color: var(--accent-color);
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(56, 189, 248, 0.2);
+}
+
+.hero-content h1 {
+    font-size: 2.8rem;
+    line-height: 1.3;
+    margin-bottom: 1.5rem;
+}
+
+.highlight {
+    color: var(--accent-color);
+}
+
+.hero-content p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+}
+
+.hero-btns {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn {
+    padding: 0.8rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    color: #000;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(56, 189, 248, 0.2);
+}
+
+.btn-secondary {
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* مكان الصورة الشخصية والتأثيرات المحيطة بها */
+.hero-image-area {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.image-wrapper {
+    position: relative;
+}
+
+.profile-img {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 24px;
+    border: 2px solid var(--border-color);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+/* قسم الجدول الزمني للخبرات (Timeline) */
+.experience-section {
+    padding: 6rem 0;
+    background: rgba(255,255,255,0.01);
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-right: 2rem;
+    border-right: 2px solid var(--border-color);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 3rem;
+}
+
+.timeline-dot {
+    position: absolute;
+    right: -2.4rem;
+    top: 5px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent-color);
+    box-shadow: 0 0 10px var(--accent-color);
+}
+
+.timeline-date {
+    color: var(--accent-color);
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content {
+    background: var(--bg-card);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.timeline-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.3rem;
+}
+
+.timeline-content h4 {
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+}
+
+/* قسم المهارات العصرية */
+.skills-section {
+    padding: 6rem 0;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.skill-card {
+    background: var(--bg-card);
+    padding: 2.5rem;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(56, 189, 248, 0.4);
+}
+
+.tech-icon {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+}
+
+.skill-card h3 {
+    margin-bottom: 1rem;
+}
+
+.skill-card ul {
+    list-style: none;
+}
+
+.skill-card ul li {
+    color: var(--text-muted);
+    margin-bottom: 0.6rem;
+    position: relative;
+    padding-right: 1.2rem;
+}
+
+.skill-card ul li::before {
+    content: "⚡";
+    position: absolute;
+    right: 0;
+    color: var(--accent-color);
+}
+
+/* قسم استعراض مشاريع الباك إند */
+.projects-section {
+    padding: 6rem 0;
+    background: rgba(255,255,255,0.01);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: var(--bg-card);
+    border-radius: 16px;
+    padding: 2rem;
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(56, 189, 248, 0.3);
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.folder-icon {
+    font-size: 2rem;
+    color: var(--accent-color);
+}
+
+.github-link {
+    color: var(--text-muted);
+    font-size: 1.4rem;
+    transition: color 0.3s;
+}
+
+.github-link:hover {
+    color: var(--text-main);
+}
+
+.project-card h3 {
+    margin-bottom: 1rem;
+    font-family: 'Inter', sans-serif; /* لأسماء المشاريع الإنجليزية */
+}
+
+.project-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.project-tags span {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-family: 'Inter', sans-serif;
+    color: var(--text-muted);
+}
+
+/* قسم أزرار وتجميعة التواصل الاحترافية */
+.contact-section {
+    padding: 8rem 0;
+    text-align: center;
+}
+
+.contact-subtitle {
+    color: var(--text-muted);
+    margin-bottom: 3.5rem;
+}
+
+.social-links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.social-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.social-box i {
+    font-size: 1.5rem;
+}
+
+.social-box:hover {
+    transform: scale(1.03);
+}
+
+/* ألوان مخصصة عند تمرير الفأرة فوق كل منصة لإعطاء طابع حيوي وعصري */
+.social-box.email:hover { border-color: #ea4335; box-shadow: 0 5px 15px rgba(234, 67, 53, 0.15); }
+.social-box.linkedin:hover { border-color: #0077b5; box-shadow: 0 5px 15px rgba(0, 119, 181, 0.15); }
+.social-box.github:hover { border-color: #fff; box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1); }
+.social-box.twitter:hover { border-color: #1da1f2; box-shadow: 0 5px 15px rgba(29, 161, 242, 0.15); }
+
+/* التذييل */
+.footer {
+    text-align: center;
+    padding: 2rem;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* تأثيرات الظهور التفاعلية بالأنيميشين */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* متجاوب تماماً مع الشاشات الصغيرة للهواتف */
+@media (max-width: 768px) {
+    .hero-wrapper {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    .hero-content h1 { font-size: 2rem; }
+    .hero-btns { justify-content: center; }
+    .profile-img { width: 260px; height: 260px; }
+    .nav-links { display: none; } /* يمكن إضافة قائمة برجر بالكامل مستقبلاً */
+    .timeline { padding-right: 0; border-right: none; }
+    .timeline-dot { display: none; }
+}
